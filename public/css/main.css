@@ -45,6 +45,12 @@ body, input, button, textarea {
     justify-content: center;
 
     margin: 0 auto;
+    transition: background 200ms
+}
+
+.visit a:hover {
+    background: #96feff;
+
 }
 
 /*Animações*/
