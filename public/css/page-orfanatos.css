@@ -36,6 +36,8 @@ aside footer {
 #mapid {
     width: 100%;
     height: 100%;
+
+    animation-delay: 200ms;
 }
 
 .leaflet-popup-content-wrapper {
@@ -77,6 +79,7 @@ aside footer {
 
 .leaflet-container {
     font: 700 2rem/1 'Nunito', sans-serif;
+    z-index: 5;
 }
 
 /*Botão*/
@@ -85,6 +88,7 @@ a.criar-orfanato {
     position: absolute;
     right: 4rem;
     bottom: 4rem;
+    z-index: 10;
 
     width: 6.4rem;
     height: 6.4rem;
