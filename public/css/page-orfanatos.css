@@ -38,6 +38,47 @@ aside footer {
     height: 100%;
 }
 
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.8);    
+    border-radius: 20px;
+}
+
+.leaflet-popup-content {
+    color: #0089a5;
+    margin: .8rem 1.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.leaflet-popup-content a {
+    width: 4rem;
+    height: 4rem;
+    background: #15C3D6;
+    box-shadow: 17.2828px 27.65px 41.48px rgba(23, 142, 166, 0.16);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 200ms;
+}
+
+.leaflet-popup-content a:hover {
+    background: #17d6eb;
+}
+
+.leaflet-popup-tip {
+    display: none;
+}
+
+.leaflet-container {
+    font: 700 2rem/1 'Nunito', sans-serif;
+}
+
 /*Botão*/
 
 a.criar-orfanato {
@@ -61,3 +102,4 @@ a.criar-orfanato {
 a.criar-orfanato:hover {
     background: #17d6eb;
 }
+
