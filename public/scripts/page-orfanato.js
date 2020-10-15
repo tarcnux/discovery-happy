@@ -27,3 +27,25 @@ const icon = L.icon({
 
 //Marcação no Mapa
 L.marker([-27.1156927,-48.9123907], {icon}).addTo(map);
+
+
+//Galeria de imagens
+function selectImage(event) {
+    const button = event.currentTarget;
+
+    //Remover todas as classes .active
+    const buttons = document.querySelectorAll('.images button');
+    buttons.forEach((button) => {
+        button.classList.remove('active');
+    })
+
+    //Selecionar a imagem clicada
+    const image = button.children[0];
+    const imageContainer = document.querySelector('.orfanato-details > img');
+
+    //Atualizar o container de imagem
+    imageContainer.src = image.src;
+
+    //Adicionar a classe active no botão clicado
+    button.classList.add('active');
+}
