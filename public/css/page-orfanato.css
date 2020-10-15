@@ -1,4 +1,4 @@
-body {
+#page-orfanato {
     display: flex;
     min-height: 100vh;
 }
@@ -34,10 +34,7 @@ aside.sidebar footer button:hover {
 } 
 
 /*Para centralizar o main*/
-#page-orfanato {
-    display: flex;
-    min-height: 100vh;
-}
+
 main {
     flex: 1;
 }
