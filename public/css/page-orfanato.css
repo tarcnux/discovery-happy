@@ -33,10 +33,19 @@ aside.sidebar footer button:hover {
     background: #17D6EB;
 } 
 
+/*Para centralizar o main*/
+#page-orfanato {
+    display: flex;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+}
 
 .with-sidebar {
     padding-left: 110px;
 }
+
 
 /*Detalhes*/
 
@@ -206,3 +215,5 @@ aside.sidebar footer button:hover {
 .primary-button img {
     margin-right: 1.6rem;
 }
+
+
