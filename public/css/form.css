@@ -59,6 +59,12 @@ fieldset legend {
 .input-block input {
     height: 6.4rem;
     page-break-after: 0 1.6rem;
+    padding-left: 15px;
+}
+
+.input-block input:valid,
+.input-block textarea:valid {
+    border: 1px solid #a1e9c5;
 }
 
 .input-block textarea {
@@ -76,5 +82,22 @@ fieldset legend {
     padding: 0 1.6rem;
     margin-top: 2.4rem;
     border-radius: 2rem;
+    cursor: pointer;
+}
+
+.new-upload {
+    position: relative;
+}
+
+.new-upload span {
+    position: absolute;
+    bottom: 14px;
+    right: 12px;
+    background: #fff;
+    border: 1px solid #d3e2e5;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 10px;
+    padding: .6rem;
     cursor: pointer;
 }
