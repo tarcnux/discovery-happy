@@ -54,3 +54,18 @@ function addPhotoField(){
     container.appendChild(newFieldContainer);
 
 }
+
+//Remover o campo de fotos
+function deleteField(event) {
+    const span = event.currentTarget;
+    const fieldsContainer = document.querySelectorAll('.new-upload');
+
+    if(fieldsContainer.length < 2){
+        //limpar o valor do campo
+        span.parentNode.children[0].value = ""
+        return
+    } 
+
+    //deletar o campo
+    span.parentNode.remove();
+}
