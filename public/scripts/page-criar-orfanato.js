@@ -69,3 +69,20 @@ function deleteField(event) {
     //deletar o campo
     span.parentNode.remove();
 }
+
+//Selecionar sim ou não
+function toggleSelect(event) {
+
+    //Remover a class active dos botões
+    document.querySelectorAll('.button-select button')
+    .forEach(button => button.classList.remove('active'))
+    //Colocar a class active no botão clicado
+    const button = event.currentTarget;
+    button.classList.add('active');   
+
+    //Atualizar input 
+    const input = document.querySelector('#open-on-weekends');
+    
+    input.value = button.dataset.value;
+    console.log(input);
+}
