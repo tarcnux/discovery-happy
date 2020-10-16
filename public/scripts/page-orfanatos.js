@@ -3,10 +3,8 @@
 const map = L.map('mapid').setView([-27.1156927,-48.9123907], 17);
 
 //Mapa
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
-{
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+.addTo(map);
 
 //Criar ícone
 const icon = L.icon({
