@@ -5,10 +5,12 @@ const path = require('path')
 
 server
 .use(express.static('public'))
-.get('/', (request, response) => {
+.set('views', path.join(__dirname, 'views'))
+.set('view engine', 'hbs')
+.get('/', (req, res) => {
     console.log('Servidor Happy...')
     
-    return response.sendFile(path.join(__dirname, 'views', 'index.html'))
+    return res.render('index')
 })
 
 server.listen(5500)
