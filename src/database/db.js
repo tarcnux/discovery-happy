@@ -11,7 +11,7 @@ function execute(db) {
             whatsapp TEXT,
             images TEXT,
             instructions TEXT,
-            visite_time TEXT,
+            visit_time TEXT,
             open_on_weekends TEXT
         );
     `)
