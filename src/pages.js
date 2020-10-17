@@ -1,3 +1,5 @@
+const orfanatos = require('./database/fakedata')
+
 module.exports = {
     index (req, res) {
         return res.render('index')
@@ -8,7 +10,7 @@ module.exports = {
     },
     
     orfanatos(req, res){
-        return res.render('orfanatos')
+        return res.render('orfanatos', { orfanatos })
     },
 
     criarOrfanato(req, res){
