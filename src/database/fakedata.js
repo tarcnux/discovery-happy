@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
     id: 1,
     lat: '-27.1156927',
     lng: '-48.9123907',
@@ -26,4 +26,4 @@ module.exports = {
     'visit-time': 'Horário de visitas das 10h às 15h',
     'open-on-weekends': '1'
 
-}
+}]
