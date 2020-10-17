@@ -1,4 +1,5 @@
-const orfanatos = require('./database/fakedata')
+const Database = require('./database/db')
+const salvarOrfanato = require('./database/salvarOrfanato')
 
 module.exports = {
     index (req, res) {
@@ -9,8 +10,15 @@ module.exports = {
         return res.render('orfanato')
     },
     
-    orfanatos(req, res){
-        return res.render('orfanatos', { orfanatos })
+    async orfanatos(req, res){
+        try {
+            const db = await Database;
+            const orfanatos = await db.all('SELECT * FROM orfanatos')
+            return res.render('orfanatos', { orfanatos })
+        } catch (error) {
+            console.log(error)
+            return res.send('Erro no banco de dados')
+        }
     },
 
     criarOrfanato(req, res){
