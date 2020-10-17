@@ -2,6 +2,7 @@ const Database = require('./db')
 
 Database.then( async db => {
     //inserir dados na tabela
+    
     await db.run(`
         INSERT into orfanatos (
             lat,
@@ -25,8 +26,12 @@ Database.then( async db => {
             '1'
         )
     `)
+    
     //Consultar dados na tabela
 
     const orfanatosSelecionados = await db.all('SELECT * FROM orfanatos')
     console.log(orfanatosSelecionados);
+
+    const orfanatoSelcionado = await db.all('SELECT * FROM orfanatos WHERE id = 1')
+    console.log(orfanatoSelcionado)
 })
