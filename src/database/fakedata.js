@@ -9,8 +9,8 @@ module.exports = [{
         'https://images.unsplash.com/photo-1598252976330-b8a1461d47a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9'
     ],
     instructions: 'Venha com amor, se sinta à vontade e traga muita esperança para distribuir.',
-    'visit-time': 'Horário de visitas das 8h às 18h',
-    'open-on-weekends': '0'
+    visit_time: 'Horário de visitas das 8h às 18h',
+    open_on_weekends: '0'
 },
 {
     id: 2,
@@ -23,7 +23,7 @@ module.exports = [{
         'https://images.unsplash.com/photo-1598252976330-b8a1461d47a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9'
     ],
     instructions: 'Venha com amor, se sinta à vontade e traga muita esperança para distribuir.',
-    'visit-time': 'Horário de visitas das 10h às 15h',
-    'open-on-weekends': '1'
+    visit_time: 'Horário de visitas das 10h às 15h',
+    open_on_weekends: '1'
 
 }]
