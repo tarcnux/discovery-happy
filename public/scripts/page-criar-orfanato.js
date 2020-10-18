@@ -22,7 +22,7 @@ let marker;
 map.on('click', (event) => {
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
-    console.log(`lat: '${lat}', lng: '${lng}',`)
+//    console.log(`lat: '${lat}', lng: '${lng}',`)
 
     document.querySelector('[name=lat]').value = lat;
     document.querySelector('[name=lng]').value = lng;
@@ -85,5 +85,17 @@ function toggleSelect(event) {
     const input = document.querySelector('#open-on-weekends');
     
     input.value = button.dataset.value;
-    console.log(input);
+    //console.log(input);
+}
+
+function validate(event) {
+    //Validar se lat e lng estão preenchidos
+    const lat = document.querySelector('[name=lat]').value;
+    const lng = document.querySelector('[name=lng]').value;
+    console.log(`lat: '${lat}', lng: '${lng}',`)          
+    if(lat=='' && lng==''){
+        //Não enviar o formulário
+        event.preventDefault()        
+        alert('Selecione um ponto no mapa!')
+    }
 }
