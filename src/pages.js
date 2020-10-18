@@ -40,4 +40,33 @@ module.exports = {
     criarOrfanato(req, res){
         return res.render('criar-orfanato')
     },
+    async salvarUmOrfanato(req, res) {
+        const fields = req.body
+        //Validação backend de envio de um ponto no mapa
+        //console.log(fields)
+        if(Object.values(fields).includes('')) {
+            return res.send('Além de preencher os campos, lembre-se de clicar no mapa para localizar o orfanato.')
+        }
+
+        try {
+            //Salvar um orfanato
+            const db = await Database
+            await salvarOrfanato(db,{
+                lat: fields.lat,
+                lng: fields.lng,
+                name: fields.name,
+                about: fields.about,
+                whatsapp: fields.whatsapp,
+                images: fields.images.toString(),
+                instructions: fields.instructions,
+                visit_time: fields.visit_time,
+                open_on_weekends: fields.open_on_weekends
+            })
+            return res.redirect('/orfanatos')
+
+        } catch (error) {
+            console.log(error)
+            return res.send('Erro no banco de dados!')
+        }
+    }
 }

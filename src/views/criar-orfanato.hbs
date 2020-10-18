@@ -38,7 +38,7 @@
         </aside>
 
         <main class="animate-appear with-sidebar">
-            <form>
+            <form method="POST" action="salvar-orfanato" onsubmit="validate(event)">
                 <fieldset>
                     <legend>Dados</legend>
 
@@ -75,7 +75,7 @@
                         <div class="images-upload" id="images">
 
                             <div class="new-upload">
-                                <input name="images" placeholder="Cole o link da foto aqui" required>
+                                <input type="url" name="images" placeholder="Cole o link da foto aqui" required>
                                 <span onclick="deleteField(event)">
                                     <img src="/images/remove-file.svg" alt="Remover Foto">
                                 </span>
@@ -98,13 +98,13 @@
                     </div>
 
                     <div class="input-block">
-                        <label for="visit-time">Horário de Visita</label>
-                        <input type="text" name="visit-time" id="visit-time" required>
+                        <label for="visit_time">Horário de Visita</label>
+                        <input type="text" name="visit_time" id="visit_time" required>
                     </div>
 
                     <div class="input-block">
-                        <label for="open-on-weekends">Atende aos finais de semana?</label>
-                        <input type="hidden" name="open-on-weekends" id="open-on-weekends" value="1">
+                        <label for="open_on_weekends">Atende aos finais de semana?</label>
+                        <input type="hidden" name="open_on_weekends" id="open_on_weekends" value="1">
                         <div class="button-select">
                             <button data-value="1"
                                 onclick="toggleSelect(event)" type="button" class="active">Sim</button>

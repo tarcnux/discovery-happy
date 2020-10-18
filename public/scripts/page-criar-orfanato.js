@@ -82,7 +82,7 @@ function toggleSelect(event) {
     button.classList.add('active');   
 
     //Atualizar input 
-    const input = document.querySelector('#open-on-weekends');
+    const input = document.querySelector('#open_on_weekends');
     
     input.value = button.dataset.value;
     //console.log(input);
