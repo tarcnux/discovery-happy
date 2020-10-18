@@ -7,8 +7,13 @@ const options = {
     zoomControl: false
 }
 
+//Pegar valores da página orfanato
+const span = document.querySelector('.map-container span')
+const lat = span.dataset.lat
+const lng = span.dataset.lng
+
 // SENAI Brusque -27.1156927,-48.9123907
-const map = L.map('mapid', options).setView([-27.1156927,-48.9123907], 17);
+const map = L.map('mapid', options).setView([lat,lng], 17);
 
 //Mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
@@ -24,7 +29,7 @@ const icon = L.icon({
 
 
 //Marcação no Mapa
-L.marker([-27.1156927,-48.9123907], {icon}).addTo(map);
+L.marker([lat,lng], {icon}).addTo(map);
 
 
 //Galeria de imagens

@@ -38,54 +38,57 @@
 
         <main class="animate-appear with-sidebar">
             <div class="orfanato-details">
-                <img src="/images/home.jpg" alt="Orfanato Alpha">
+                <img src="{{orfanato.firstImage}}" alt="{{orfanato.name}}">
                 <div class="images">
+                    {{#each orfanato.images}}
                     <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=1" alt="Orfanato Alpha">
+                        <img src="{{this}}" alt="{{orfanato.name}}">
                     </button>
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=2" alt="Orfanato Alpha">
-                    </button>
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=3" alt="Orfanato Alpha">
-                    </button>
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=4" alt="Orfanato Alpha">
-                    </button>
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=5" alt="Orfanato Alpha">
-                    </button>
-                    <button onclick="selectImage(event)" type="button">
-                        <img src="https://source.unsplash.com/random?id=6" alt="Orfanato Alpha">
-                    </button>
+                    {{/each}}
                 </div>
                 <div class="orfanato-details-content">
-                    <h1>Orfanato Alpha</h1>
-                    <p>Presta assistência à crianças Alpha</p>
+                    <h1>{{orfanato.name}}</h1>
+                    <p>{{orfanato.about}}</p>
                     <div class="map-container">
                         <div id="mapid"></div>
+                        <span 
+                        data-lat="{{orfanato.lat}}"
+                        data-lng="{{orfanato.lng}}"
+                        hidden></span>
                         <footer>
-                            <a href="#">Ver rotas no Google Maps</a>
+                            <a  target="_blank"
+                                href="https://maps.google.com/mobile?q={{orfanato.lat}},{{orfanato.lng}}&z=15">
+                                Ver rotas no Google Maps
+                                </a>
                         </footer>
                     </div> 
                     
                     <hr>
                     <h2>Instruções para visita</h2>
-                    <p>Venha com amor, se sinta à vontade e traga muita esperança para distribuir.</p>
+                    <p>{{orfanato.instructions}}</p>
                     <div class="open-details">
                         <div class="hour">
                             <img src="/images/clock.svg" alt="Horários">
-                            Horários de visitas das 8h até às 18h
+                            {{orfanato.visit_time}}
                         </div>
-                        <div class="open-on-weekends">
-                            <img src="/images/info.svg" alt="Informações">
-                            Atendemos aos fins de semanas
-                        </div>
+                        {{#if orfanato.open_on_weekends}}
+                            <div class="open-on-weekends open">
+                                <img src="/images/info.svg" alt="Informações">
+                                Atendemos aos finais de semana
+                            </div>
+                        {{else}}
+                            <div class="open-on-weekends closed">
+                                <img src="/images/info-red.svg" alt="Informações">
+                                Não atendemos aos finais de semana
+                            </div>
+                        {{/if}}
                     </div>
-                    <button class="primary-button" type="button">
+                    <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orfanato.whatsapp}}&text=Oi, estou fazendo contato através da página {{orfanato.name}}"
+                    target="_blank"
+                    class="primary-button" type="button">
                         <img src="/images/whatsapp.svg" alt="Chamar no whatsapp">
                         Entrar em contato
-                    </button>
+                    </a>
 
                 </div>
             </div>
